@@ -1,0 +1,49 @@
+1.cmake使用#注释
+eg: #this is camke file
+注释块使用#[[]]
+eg: #[[#this is camke file
+       #this is camke file
+       #this is camke file
+     ]]
+
+2.指定最低CMake版本，不是必须的
+eg: cmake_minimum_required(VERSION3.0)
+
+3.project指定项目名字
+
+4.add_executable定义工程生成可执行程序
+  add_executable(可执行程序 源文件名称)
+eg:add_executable(app add.cpp sub.cpp div.cpp mult.cpp main.c)
+   add_executable(app; add.cpp ;sub.cpp; div.cpp; mult.cpp; main.c)
+
+5.设置变量
+set(变量名 变量值)
+eg: set(SRC_LIST add.cpp sub.cpp div.cpp mult.cpp main.c)  #给变量SRC_LIST初始化
+set可以指定编译器使用的C++标准
+eg: set(CMAKE_CXX_STANDARD 11) #指定使用C++11标准
+
+6.使用变量
+通过"${}"来使用变量
+eg: add_executable(app ${SRC_LIST})
+
+7.搜索文件
+aux_source_directory(<dir> <variable>)
+dir:要搜索的目录
+variable:将dir搜索的源文件列表存储到该变量中
+eg: aux_source_directory(${PROJECT_SOURCE_DIR} SRC)  PROJECT_SOURCE_DIR是执行(cmake ..)命令的目录路径  
+
+file(GLOB/GLOB_RESOUSE 变量名 要搜索的文件路径和文件类型)
+GLOB：指定如果搜索当前路径
+GLOB_RESOUSE: 做递归搜索指定目录
+eg: file(GLOB SRC ${CMAKE_SOURCE_DIR}/*.cpp)  CMAKE_SOURCE_DIR是CMakeLists.txt的目录路径
+
+8.添加头文件路径
+include_directories()
+eg: include_directories(${CMAKE_SOURCE_DIR}/include)
+
+9.执行Cmake命令
+cmake CmakeLists.txt文件所在路径
+make 工程名
+
+10.制作静态库
+add_library(库名称 STATIC 源文件)
