@@ -1,3 +1,0 @@
-/root/study/algo-note/liuyuan20250216/cmake/test/build/CMakeFiles/app.dir
-/root/study/algo-note/liuyuan20250216/cmake/test/build/CMakeFiles/edit_cache.dir
-/root/study/algo-note/liuyuan20250216/cmake/test/build/CMakeFiles/rebuild_cache.dir
