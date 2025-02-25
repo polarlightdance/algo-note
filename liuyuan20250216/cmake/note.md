@@ -21,6 +21,7 @@
 # 设置变量
   set(变量名 变量值)
   eg: set(SRC_LIST add.cpp sub.cpp div.cpp mult.cpp main.c)  #给变量SRC_LIST初始化
+
   set可以指定编译器使用的C++标准
   eg: set(CMAKE_CXX_STANDARD 11) #指定使用C++11标准
 
@@ -30,6 +31,7 @@
 
 # 搜索文件
   ## aux_source_directory
+
   aux_source_directory(<dir> <variable>)
   dir:要搜索的目录
   variable:将dir搜索的源文件列表存储到该变量中
@@ -38,6 +40,7 @@
   eg: aux_source_directory(${PROJECT_SOURCE_DIR} SRC)  
 
   ## file
+
   file(GLOB/GLOB_RESOUSE 变量名 要搜索的文件路径和文件类型)
   GLOB：指定如果搜索当前路径
   GLOB_RESOUSE: 做递归搜索指定目录
@@ -64,7 +67,7 @@
 
 # 指定库文件路径
   link_directories(静态库或动态库)
-  
+
   *CAMKE_CURRENT_SOURCE_DIR指的是当前处理的CMakeLists.txt所在的路径*
   eg: link_directories(${CMAKE_CURRENT_BINARY_DIR}/lib1)  
 
@@ -93,28 +96,33 @@
   CMake的命令行工具会在stdout上显示STATUS消息，在stderr上显示其他所有消息。CMake的GUI会在它的log区域显示所有消息。
   CMake警告和错误消息的文本显示使用的是一种简单的标记语言。文本没有缩进，超过长度的行会回卷，段落之间以新行做为分隔符。
 
-  eg: # 输出一般日志信息
-  message(STATUS "source path: ${PROJECT_SOURCE_DIR}")
-  #输出警告信息
-  message(WARNING "source path: ${PROJECT_SOURCE_DIR}")
-  #输出错误信息
-  message(FATAL_ERROR "source path: ${PROJECT_SOURCE_DIR}")
+  eg: 
+    #输出一般日志信息
+    message(STATUS "source path: ${PROJECT_SOURCE_DIR}")
+    #输出警告信息
+    message(WARNING "source path: ${PROJECT_SOURCE_DIR}")
+    #输出错误信息
+    message(FATAL_ERROR "source path: ${PROJECT_SOURCE_DIR}")
 
 # 宏定义
-add_definitions(-D宏名称)
-eg: cmake_minimum_required(VERSION 3.0)
-    project(TEST)
-    # 自定义 DEBUG 宏
-    add_definitions(-DDEBUG)
-    add_executable(app ./test.c)
+  add_definitions(-D宏名称)
+
+  eg: cmake_minimum_required(VERSION 3.0)
+      project(TEST)
+      # 自定义 DEBUG 宏
+      add_definitions(-DDEBUG)
+      add_executable(app ./test.c)
 
   ## CMake中常用的宏:
-  PROJECT_SOURCE_DIR	             使用cmake命令后紧跟的目录，一般是工程的根目录
-  PROJECT_BINARY_DIR	             执行cmake命令的目录
-  CMAKE_CURRENT_SOURCE_DIR	       当前处理的CMakeLists.txt所在的路径
-  CMAKE_CURRENT_BINARY_DIR	target 编译目录
-  EXECUTABLE_OUTPUT_PATH	         重新定义目标二进制可执行文件的存放位置
-  LIBRARY_OUTPUT_PATH	             重新定义目标链接库文件的存放位置
-  PROJECT_NAME	                   返回通过PROJECT指令定义的项目名称
-  CMAKE_BINARY_DIR	               项目实际构建路径，假设在build目录进行的构建，那么得到的就是这个目录的路径
+
+  |  宏名  |  作用  |
+  |:--------|:--------:|
+  |  centered PROJECT_SOURCE_DIR | centered 使用cmake命令后紧跟的目录，一般是工程的根目录 |
+  |  centered PROJECT_BINARY_DIR | centered 执行cmake命令的目录 |
+  |  centered CMAKE_CURRENT_SOURCE_DIR | centered 当前处理的CMakeLists.txt所在的路径 |
+  |  centered CMAKE_CURRENT_BINARY_DIR | centered 编译目录 |
+  |  centered EXECUTABLE_OUTPUT_PATH | centered 重新定义目标二进制可执行文件的存放位置 |
+  |  centered LIBRARY_OUTPUT_PATH | centered 重新定义目标链接库文件的存放位置 |
+  |  centered PROJECT_NAME | centered 返回通过PROJECT指令定义的项目名称 |
+  |  centered CMAKE_BINARY_DIR | centered 项目实际构建路径，假设在build目录进行的构建，那么得到的就是这个目录的路径 |
 
