@@ -97,11 +97,11 @@
   CMake警告和错误消息的文本显示使用的是一种简单的标记语言。文本没有缩进，超过长度的行会回卷，段落之间以新行做为分隔符。
 
   eg: 
-    #输出一般日志信息
+    输出一般日志信息
     message(STATUS "source path: ${PROJECT_SOURCE_DIR}")
-    #输出警告信息
+    输出警告信息
     message(WARNING "source path: ${PROJECT_SOURCE_DIR}")
-    #输出错误信息
+    输出错误信息
     message(FATAL_ERROR "source path: ${PROJECT_SOURCE_DIR}")
 
 # 宏定义
