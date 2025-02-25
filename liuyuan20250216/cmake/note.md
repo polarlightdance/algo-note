@@ -115,7 +115,7 @@
 
   ## CMake中常用的宏:
 
-  |  centered 宏名  |  centered 作用  |
+  |  宏名  |  作用  |
   |:--------|:--------:|
   |  centered PROJECT_SOURCE_DIR | centered 使用cmake命令后紧跟的目录，一般是工程的根目录 |
   |  centered PROJECT_BINARY_DIR | centered 执行cmake命令的目录 |
