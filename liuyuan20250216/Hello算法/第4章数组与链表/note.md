@@ -44,11 +44,11 @@
 
 ### 插入节点
     只需改变两个节点引用（指针）即可。  
-    ![插入节点](/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/image.png "image.png")  
+    ![插入节点](../../../study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/image.png)  
 
 ### 删除节点
     只需改变一个节点的引用（指针）即可。  
-    ![删除节点](/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/image-1.png "image-1.png")  
+    ![删除节点](/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/image-1.png "image-1.png")  
 
 ### 查找节点
 遍历链表，查找其中值为 target 的节点，输出该节点在链表中的索引。此过程也属于线性查找。
