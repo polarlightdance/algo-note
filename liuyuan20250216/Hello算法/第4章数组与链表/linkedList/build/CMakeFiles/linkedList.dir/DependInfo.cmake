@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/arry.cpp" "CMakeFiles/app.dir/arry.cpp.o" "gcc" "CMakeFiles/app.dir/arry.cpp.o.d"
+  "/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/list.cpp" "CMakeFiles/linkedList.dir/list.cpp.o" "gcc" "CMakeFiles/linkedList.dir/list.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表
+CMAKE_SOURCE_DIR = /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build
+CMAKE_BINARY_DIR = /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build/CMakeFiles /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/build/CMakeFiles /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named app
+# Target rules for targets named linkedList
 
 # Build rule for target.
-app: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app
-.PHONY : app
+linkedList: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linkedList
+.PHONY : linkedList
 
 # fast build rule for target.
-app/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
-.PHONY : app/fast
+linkedList/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/build
+.PHONY : linkedList/fast
 
-arry.o: arry.cpp.o
-.PHONY : arry.o
+list.o: list.cpp.o
+.PHONY : list.o
 
 # target to build an object file
-arry.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/arry.cpp.o
-.PHONY : arry.cpp.o
+list.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/list.cpp.o
+.PHONY : list.cpp.o
 
-arry.i: arry.cpp.i
-.PHONY : arry.i
+list.i: list.cpp.i
+.PHONY : list.i
 
 # target to preprocess a source file
-arry.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/arry.cpp.i
-.PHONY : arry.cpp.i
+list.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/list.cpp.i
+.PHONY : list.cpp.i
 
-arry.s: arry.cpp.s
-.PHONY : arry.s
+list.s: list.cpp.s
+.PHONY : list.s
 
 # target to generate assembly for a file
-arry.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/arry.cpp.s
-.PHONY : arry.cpp.s
+list.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/list.cpp.s
+.PHONY : list.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... app"
-	@echo "... arry.o"
-	@echo "... arry.i"
-	@echo "... arry.s"
+	@echo "... linkedList"
+	@echo "... list.o"
+	@echo "... list.i"
+	@echo "... list.s"
 .PHONY : help
 
 

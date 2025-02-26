@@ -1,3 +1,0 @@
-/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build/CMakeFiles/app.dir
-/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build/CMakeFiles/edit_cache.dir
-/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build/CMakeFiles/rebuild_cache.dir

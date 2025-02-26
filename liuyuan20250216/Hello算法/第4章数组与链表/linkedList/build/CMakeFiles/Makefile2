@@ -54,16 +54,16 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表
+CMAKE_SOURCE_DIR = /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build
+CMAKE_BINARY_DIR = /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/app.dir/all
+all: CMakeFiles/linkedList.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/app.dir/clean
+clean: CMakeFiles/linkedList.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/app.dir
+# Target rules for target CMakeFiles/linkedList.dir
 
 # All Build rule for target.
-CMakeFiles/app.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build/CMakeFiles --progress-num=1,2 "Built target app"
-.PHONY : CMakeFiles/app.dir/all
+CMakeFiles/linkedList.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/build/CMakeFiles --progress-num=1,2 "Built target linkedList"
+.PHONY : CMakeFiles/linkedList.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/app.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build/CMakeFiles 0
-.PHONY : CMakeFiles/app.dir/rule
+CMakeFiles/linkedList.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/linkedList.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/build/CMakeFiles 0
+.PHONY : CMakeFiles/linkedList.dir/rule
 
 # Convenience name for target.
-app: CMakeFiles/app.dir/rule
-.PHONY : app
+linkedList: CMakeFiles/linkedList.dir/rule
+.PHONY : linkedList
 
 # clean rule for target.
-CMakeFiles/app.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/clean
-.PHONY : CMakeFiles/app.dir/clean
+CMakeFiles/linkedList.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/clean
+.PHONY : CMakeFiles/linkedList.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

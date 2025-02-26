@@ -1,4 +1,4 @@
-# Install script for directory: /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表
+# Install script for directory: /root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/root/study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/linkedList/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
