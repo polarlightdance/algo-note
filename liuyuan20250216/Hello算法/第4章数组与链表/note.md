@@ -44,7 +44,7 @@
 
 ### 插入节点
     只需改变两个节点引用（指针）即可。  
-    ![插入节点](../../../study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/image.png)  
+    ![插入节点](../../../study/algo-note/liuyuan20250216/Hello算法/第4章数组与链表/image.png "image.png")  
 
 ### 删除节点
     只需改变一个节点的引用（指针）即可。  
