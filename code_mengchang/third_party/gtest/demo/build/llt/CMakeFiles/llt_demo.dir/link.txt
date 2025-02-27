@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/llt_demo.dir/main_test.cpp.o CMakeFiles/llt_demo.dir/__/src/add.cpp.o CMakeFiles/llt_demo.dir/add_testceses/add_test.cpp.o -o llt_demo  -Wl,-rpath,/root/algo-note/code_mengchang/third_party/gtest/lib: /root/algo-note/code_mengchang/third_party/gtest/lib/libgtest.so 
