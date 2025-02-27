@@ -82,7 +82,8 @@ int find(listNode *head, int target)
 }
 
 /* 遍历链表 */
-void printList(list *head){
+void printList(list *head)
+{
 	list *temp;
 	temp = head->next;
 	while(temp != nullptr){
