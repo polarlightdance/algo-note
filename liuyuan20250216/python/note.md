@@ -71,8 +71,6 @@
 1. python中单行注释采用 # 开头。
     ```py
     #!/usr/bin/python
-    # -*- coding: UTF-8 -*-
-    # 文件名：test.py
 
     # 第一个注释
     print ("Hello, Python!")  # 第二个注释
@@ -84,8 +82,6 @@
 3. python 中多行注释使用三个单引号 ''' 或三个双引号 """。
     ```py
     #!/usr/bin/python
-    # -*- coding: UTF-8 -*-
-    # 文件名：test.py
 
     '''
     这是多行注释，使用单引号。
@@ -110,7 +106,6 @@
 1. 下面的程序执行后就会等待用户输入，按回车键后就会退出：
     ```py
     #!/usr/bin/python
-    # -*- coding: UTF-8 -*-
 
     input("按下 enter 键退出，其他任意键显示...\n")
     ```
@@ -118,7 +113,6 @@
 1. print 默认输出是换行的，如果要实现不换行需要在变量末尾加上逗号","。
     ```py
     #!/usr/bin/python
-    # -*- coding: UTF-8 -*-
 
     x="a"
     y="b"
