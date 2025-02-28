@@ -71,3 +71,5 @@ print('liyuan.com')
 
 print('China ', end="liuyuan ")  # 设置字符串
 print('zhenshuai')
+
+print('刘源，真帅！')

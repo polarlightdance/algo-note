@@ -24,7 +24,7 @@
     print("hello, world!");print("hello, python!")
     ```
 
-5. 识别中文需要添加：
+5. python2识别中文需要添加：
     ```py
     # -*- coding: UTF-8 -*-
     ```
