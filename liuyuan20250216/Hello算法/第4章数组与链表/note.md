@@ -115,20 +115,20 @@ int num = arr2[1];
 列表可以自由地添加与删除元素。在列表尾部添加元素的时间复杂度为 O(1) ，但插入和删除元素的效率仍与数组相同，时间复杂度为O(n)。  
 ```cpp
 /* 清空列表 */
-nums.clear();
+arr1.clear();
 
 /* 在尾部添加元素 */
-nums.push_back(1);
-nums.push_back(3);
-nums.push_back(2);
-nums.push_back(5);
-nums.push_back(4);
+arr1.push_back(1);
+arr1.push_back(3);
+arr1.push_back(2);
+arr1.push_back(5);
+arr1.push_back(4);
 
 /* 在中间插入元素 */
-nums.insert(nums.begin() + 3, 6);  // 在索引 3 处插入数字 6
+arr1.insert(arr1.begin() + 3, 6);  // 在索引 3 处插入数字 6
 
 /* 删除元素 */
-nums.erase(nums.begin() + 3);      // 删除索引 3 处的元素
+arr1.erase(arr1.begin() + 3);      // 删除索引 3 处的元素
 ```
 
 4. 遍历列表
