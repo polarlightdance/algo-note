@@ -1,4 +1,4 @@
-# linux中运行python
+# Linux中运行python
 1. 赋予脚本执行权限（仅需一次）：
     ` chmod +x hello.py `
 
