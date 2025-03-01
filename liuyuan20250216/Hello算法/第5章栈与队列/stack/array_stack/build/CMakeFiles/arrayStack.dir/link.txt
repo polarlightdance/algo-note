@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/arrayStack.dir/src/array_stack.cpp.o CMakeFiles/arrayStack.dir/src/main.cpp.o -o arrayStack 

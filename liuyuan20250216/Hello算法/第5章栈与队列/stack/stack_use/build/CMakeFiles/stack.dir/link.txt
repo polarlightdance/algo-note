@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/stack.dir/src/main.cpp.o CMakeFiles/stack.dir/src/stack.cpp.o -o stack 
