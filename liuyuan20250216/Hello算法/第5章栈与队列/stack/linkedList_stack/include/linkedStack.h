@@ -1,5 +1,5 @@
-#ifndef COMMON_H
-#define COMMON_H
+#ifndef LINKEDSTACK_H
+#define LINKEDSTACK_H
 
 #include <iostream>
 #include <vector>

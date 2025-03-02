@@ -1,4 +1,4 @@
-#include "common.h"
+#include "linkedStack.h"
 
 /* 获取栈的长度 */
 int linkedList_stack::size()
