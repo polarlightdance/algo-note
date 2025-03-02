@@ -147,3 +147,254 @@
         print('China ', end="liuyuan ")  # 设置字符串
         print('zhenshuai')
         ```
+
+# 变量类型
+ - 变量是存储在内存中的值，这就意味着在创建变量时会在内存中开辟一个空间。
+
+ - 基于变量的数据类型，解释器会分配指定内存，并决定什么数据可以被存储在内存中。
+
+ - 因此，变量可以指定不同的数据类型，这些变量可以存储整数，小数或字符。
+
+## 变量赋值
+ - Python 中的变量赋值不需要类型声明。
+
+ - 每个变量在内存中创建，都包括变量的标识，名称和数据这些信息。
+
+ - 每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。
+
+ - 等号 = 用来给变量赋值。
+  - 等号 = 运算符左边是一个变量名，等号 = 运算符右边是存储在变量中的值。例如：
+  ```py
+  #!/usr/bin/python
+    age = 26 # 赋值整型变量
+    born = 1998.07 # 浮点型
+    name = "liuyuan" # 字符串
+    
+    print counter
+    print miles
+    print name
+  ```
+- 多个变量赋值
+ - Python允许你同时为多个变量赋值。例如：
+    ```py
+    a = b = c = 1
+    ```
+ - 可以为多个对象指定多个变量。例如：
+    ```py
+    a, b, c = 1, 2, "yuan"
+    ```
+
+## 标准数据类型
+ - 在内存中存储的数据可以有多种类型。  
+   例如，一个人的年龄可以用数字来存储，他的名字可以用字符来存储。  
+
+ - Python 定义了一些标准类型，用于存储各种类型的数据。  
+   Python有五个标准的数据类型：  
+    1. Numbers（数字）:Python 支持整数（int）、浮点数（float）、复数（complex）等数字类型。  
+    ```py
+    x = 10
+    print(type(x), x)
+    ```
+    2. String（字符串）:字符串是由单引号或双引号括起来的字符序列  
+    - python的字串列表有2种取值顺序:  
+     - 从左到右索引默认0开始的，最大范围是字符串长度少1
+     - 从右到左索引默认-1开始的，最大范围是字符串开头 
+    ```py
+    s1 = "liuyuan"
+    s2 = "zhenshuai"
+    print(type(s1))
+
+    # [头下标:尾下标] 获取的子字符串包含头下标的字符，但不包含尾下标的字符。
+    print(s1[1:3])
+
+    # 输出从第三个字符开始的字符串
+    print(s1[2:])
+
+    print(s1, s2)
+
+    # 输出字符串两次
+    print(s1 * 2)
+
+    # 输出连接的字符串
+    print("China" + s1)
+
+    ```
+    3. List（列表）:列表是一个有序的可变序列，可以包含不同类型的元素。
+     - 左到右索引默认 0 开始，从右到左索引默认 -1 开始，下标可以为空表示取到头或尾。
+     - 加号 + 是列表连接运算符，星号 * 是重复操作。
+
+    ```py
+    my_list = [1998, 7, 23, "liuyuan", 2025, "zhenshuai"]
+    print(type(my_list))
+    print(my_list)
+    # 打印组合的列表
+    print("打印组合的列表: ", my_list + your_list)
+    # 输出列表两次
+    print("输出列表两次: ", my_list * 2)
+    # 输出从第三个开始至列表末尾的所有元素
+    print("输出从第三个开始至列表末尾的所有元素: ", my_list[2 :])
+    # 输出列表的第一个元素
+    print("输出列表的第一个元素: ", my_list[0])
+    # 输出第二个至第三个元素 
+    print("输出第二个至第三个元素: ", my_list[1 :3])
+    ```
+
+    4. Tuple（元组）:元组是一个有序的不可变序列(List)，通常用于存储不可修改的数据。  
+    ```py
+    my_tuple = [1998, 7, 23, "liuyuan", 2025, "zhenshuai"]
+    print(type(my_tuple))
+    print(my_tuple)
+    # 输出元组的第一个元素
+    print("first data is: ",my_tuple[0])
+    # 输出第二个至第四个（不包含）的元素 
+    print("2 to 4 data is: ", my_tuple[1:3])
+    # 输出从第三个开始至列表末尾的所有元素
+    print("3 to end data is: ", my_tuple[2:])
+    # 输出元组两次
+    print("data * 2 data is: ",my_tuple * 2)
+    # 打印组合的元组
+    print("my_tuple + your_tuple data is: ", my_tuple + your_tuple)
+    # 元组不可修改
+    # my_tuple[0] = 100  # 这行会报错
+    ```
+
+    5. Dictionary（字典）:字典是一个无序的键值对集合，键必须是唯一的。
+     - 是除列表以外python之中最灵活的内置数据结构类型。列表是有序的对象集合，字典是无序的对象集合。两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取
+     - 字典用"{ }"标识。字典由索引(key)和它对应的值value组成。
+      
+    ```py
+    my_dict = {
+        "name" : "liuyuan",
+        'age' : '26',
+        "is_student" : False,
+        "courses" : ["Chinese", "English"]
+    }
+    print(type(my_dict))
+    print(my_dict)
+    # 访问字典元素
+    print(my_dict["name"])
+    # 修改字典元素
+    my_dict["age"] = 18
+    print(my_dict["age"])
+    # 添加新键值对
+    my_dict["grade"] = "S"
+    print(my_dict)
+    ```  
+    
+ - type()
+   1. type() 是 Python 的内置函数，用于获取对象的类型。
+
+   2. 它返回一个类型对象，表示参数所属的类。
+
+   3. type() 常用于调试、类型检查和动态类型判断。
+
+## Python数据类型转换
+ - 以下几个内置的函数可以执行数据类型之间的转换。这些函数返回一个新的对象，表示转换的值。
+ 
+|  函数  |  描述  |
+|:--------|:--------:|
+|  int(x) | 将x转换为一个整数  |
+|  long(x) | 将x转换为一个长整数  |
+|  float(x)  | 将x转换到一个浮点数 |
+|  complex(real)  |  创建一个复数  |
+|  str(x)  |  将对象 x 转换为字符串  |
+|  repr(x)  |  将对象 x 转换为表达式字符串  |
+|  eval(str)  |  用来计算在字符串中的有效Python表达式,并返回一个对象  |
+|  tuple(s)  |  将序列 s 转换为一个元组  |
+|  list(s)  |  将序列 s 转换为一个列表  |
+|  set(s)  |  转换为可变集合  |
+|  dict(d)  |  创建一个字典。d 必须是一个序列 (key,value)元组。  |
+|  frozenset(s)  |  转换为不可变集合  |
+|  chr(x)  |  将一个整数转换为一个字符  |
+|  bin(x)  |  将一个整数转换为二进制字符串  |
+|  ord(x)  |  将一个字符转换为它的整数值  |
+|  hex(x)  |  将一个整数转换为一个十六进制字符串  |
+|  oct(x)  |  将一个整数转换为一个八进制字符串  |
+
+
+```py
+print("-------int----------")
+str1 = "123456"
+str_int = int(str1)
+print(str_int)
+
+print("-------float----------")
+str2 = "123.456"
+str_float = float(str2)
+print(str_float)
+
+print("-------str----------")
+num = 123456
+num_str = str(num)
+print(num_str)
+
+print("-------complex----------")
+str_complex = complex(1, 2)
+print(str_complex)
+print(str_complex.real)  # 输出实部: 1.0
+print(str_complex.imag)  # 输出虚部: 2.0
+
+print("-------eval----------")
+str = "123"
+str_eval = eval(str)
+print(str_eval)
+
+print("-------repr----------")
+str3 = "123"
+str_repr = repr(str3)
+print(str_repr)
+
+print("-------tuple----------")
+str4 = "123"
+str_tuple = tuple(str4)
+print(str_tuple)
+
+print("-------List----------")
+str5 = "123"
+str_list = list(str5)
+print(str_list)
+
+print("-------set----------")
+str6 = "123"
+str_set = set(str6)
+print(str_set)
+
+print("-------dict----------")
+str7 = "name=liuyuan,age=26"
+# split(",") 方法将字符串按逗号 , 分割成一个列表。结果：["name=Alice", "age=25"]。
+# for pair in str7.split(",")这是一个生成器表达式，遍历 str7.split(",") 的结果
+#pair.split("=")对每个 pair（例如 "name=liuyuan"），使用 split("=") 方法将其按等号 = 分割成一个列表
+str_dict = dict(pair.split("=") for pair in str7.split(","))
+print(str_dict)
+
+print("-------frozenset----------")
+str8 = "123"
+str_frozenset = frozenset(str8)
+print(str_frozenset)
+
+print("-------chr----------")
+str9 = 97
+str_chr = chr(str9)
+print(str_chr)
+
+print("-------ord----------")
+str10 = "a"
+str_ord = ord(str10)
+print(str_ord)
+
+print("-------hex----------")
+str11 = 10
+str_hex = hex(str11)
+print(str_hex)
+
+print("-------oct----------")
+str12 = 10
+str_oct = oct(str12)
+print(str_oct)
+
+print("-------bin----------")
+str13 = 10
+str_bin = bin(str13)
+print(str_bin)
+
+```
