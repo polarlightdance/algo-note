@@ -38,3 +38,19 @@
    使用一个变量 front 指向队首元素的索引，并维护一个变量 size 用于记录队列长度。定义 rear = front + size ，这个公式计算出的 rear 指向队尾元素之后的下一个位置。数组中包含元素的有效区间为 [front, rear - 1]
    - 入队操作：将输入元素赋值给 rear 索引处，并将 size 增加 1 。
    - 出队操作：只需将 front 增加 1 ，并将 size 减少 1 。
+
+# 双向队列
+  在队列中，我们仅能删除头部元素或在尾部添加元素。双向队列（double-ended queue）提供了更高的灵活性，允许在头部和尾部执行元素的添加或删除操作。
+
+##  双向队列常用操作
+
+|  代码  |  含义  |
+|:--------|:--------:|
+|  push_back(x)/push_front(x) | 把x插入队尾后/队首O(1) |
+|  back()/front() | 返回队尾/队首元素O(1) |
+|  pop_back()/pop_front() | 删除队尾/队首元素O(1) |
+|  erase(iterator it) | 删除双端队列中的某一个元素 |
+|  erase(iterator first,iterator last) | 删除双端队列中[first,last)中的元素O(1) |
+|  empty() | 判断deque是否空O(1) |
+|  size() | 返回deque的元素数量O(1) |
+|  clear() | 清空dequeO(1) |
