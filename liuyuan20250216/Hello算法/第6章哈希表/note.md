@@ -28,11 +28,11 @@ C++ 中的关联容器（如 std::map 或 std::unordered_map）存储的元素�
 |  insert()  |  插入键值对（若键已存在，则不覆盖）  |  map.insert({"key", value});  |  返回一个 pair<iterator, bool>，bool 表示是否插入成功  |
 |  emplace()  |  原地构造键值对（高效插入）  |  map.emplace("key", value);  |  性能优于 insert，避免临时对象拷贝（C++11 特性）  |
 
-    ```cpp
-    myHashMap["orange"] = 1;  // 直接赋值插入
-    myHashMap.insert({"apple", 2});  // 使用insert方法插入
-    myHashMap.emplace("banana", 3);  // 使用emplace方法插入; 高效插入（C++11）
-    ```
+```cpp
+myHashMap["orange"] = 1;  // 直接赋值插入
+myHashMap.insert({"apple", 2});  // 使用insert方法插入
+myHashMap.emplace("banana", 3);  // 使用emplace方法插入; 高效插入（C++11）
+```
 
 - 访问元素
 
