@@ -43,15 +43,15 @@ myHashMap.emplace("banana", 3);  // 使用emplace方法插入; 高效插入（C+
 |  find()  |  查找键是否存在，返回迭代器  |  auto it = map.find("key");  |  若未找到返回 end()  |
 |  count()  |  统计键是否存在（返回 0 或 1）  |  if (map.count("key") > 0) { ... }  |  适合快速检查键是否存在  |
 
-    ```cpp
-    std::string key = "greap";
-    auto it = myHashMap.find(greap);  // 查找元素
-    if (it !=myHashMap.end()) {
-        std::cout << "greap" << "出现的次数：" << it->second << std::endl;
-    }
-    else {
-        std::cout << "greap" << "未出现" << std::endl;
-    }
+```cpp
+std::string key = "greap";
+auto it = myHashMap.find(greap);  // 查找元素
+if (it !=myHashMap.end()) {
+    std::cout << "greap" << "出现的次数：" << it->second << std::endl;
+}
+else {
+    std::cout << "greap" << "未出现" << std::endl;
+}
     /*
     it->first 和 it->second 的作用：
     it->first：获取当前迭代器 it 指向的元素的 键。
@@ -66,10 +66,10 @@ myHashMap.emplace("banana", 3);  // 使用emplace方法插入; 高效插入（C+
 |  erase()  |  删除指定键或迭代器指向的元素  |  map.erase("key");  |  返回删除的元素数量（0 或 1）  |
 |  clear()  |  清空所有元素  |  map.clear();  |	哈希表变为空  |
 
-    ```cpp
-    myHashMap.erase("apple"); // 删除元素
-    myHashMap.clear(); // 清空所有元素
-    ```
+```cpp
+myHashMap.erase("apple"); // 删除元素
+myHashMap.clear(); // 清空所有元素
+```
 - 遍历哈希表
 
 |  函数  |  作用  |  示例代码  |  说明  |
@@ -77,10 +77,10 @@ myHashMap.emplace("banana", 3);  // 使用emplace方法插入; 高效插入（C+
 |  范围 for 循环  |  遍历所有键值对  |  for (const auto& pair : map) { ... }  |  pair.first 是键，pair.second 是值  |
 |  迭代器  |  通过迭代器遍历  |  for (auto it = map.begin(); it != map.end(); ++it) { ... }  |   可配合 begin() 和 end() 使用  |
 
-    ```cpp
-    for(const auto& pair: myHashMap) {  // 遍历哈希表
-        std::cout << pair.first << " : " << pair.second << std::endl;
-    }
+```cpp
+for(const auto& pair: myHashMap) {  // 遍历哈希表
+    std::cout << pair.first << " : " << pair.second << std::endl;
+}
     ```
 - 其他操作
 
