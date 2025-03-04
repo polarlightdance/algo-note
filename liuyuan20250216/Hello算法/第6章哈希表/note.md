@@ -6,7 +6,7 @@ C++ 中的关联容器（如 std::map 或 std::unordered_map）存储的元素�
 
 # 哈希表
 
-1. 哈希表(hash table),又称散列表,它通过建立键key与值value之间的映射,实现高效的元素查询.具体而言,我们向哈希表中输入一个键key,则可以在O(1)时间内获取对应的值value. ***在哈希表中进行增删查改的时间复杂度都是 ***  
+1. 哈希表(hash table),又称散列表,它通过建立键key与值value之间的映射,实现高效的元素查询.具体而言,我们向哈希表中输入一个键key,则可以在O(1)时间内获取对应的值value. ***在哈希表中进行增删查改的时间复杂度都是O(1) ***  
 2. 它在以下场景中非常有用：
     - 快速查找：如字典、缓存系统。
     - 去重统计：如统计单词频率。
@@ -45,13 +45,12 @@ C++ 中的关联容器（如 std::map 或 std::unordered_map）存储的元素�
 
     ```cpp
     std::string key = "greap";
-    // findHash(myHashMap, key);
-    auto it = myHashMap.find(key);  // 查找元素
+    auto it = myHashMap.find(greap);  // 查找元素
     if (it !=myHashMap.end()) {
-        std::cout << key << "出现的次数：" << it->second << std::endl;
+        std::cout << "greap" << "出现的次数：" << it->second << std::endl;
     }
     else {
-        std::cout << key << "未出现" << std::endl;
+        std::cout << "greap" << "未出现" << std::endl;
     }
     /*
     it->first 和 it->second 的作用：
@@ -91,11 +90,9 @@ C++ 中的关联容器（如 std::map 或 std::unordered_map）存储的元素�
 |  empty()  |  检查哈希表是否为空  |  if (map.empty()) { ... }  |  等价于 size() == 0  |
 
  1. 判断是否为空
-   `wordCount.empty()`
+   `myHashMap.empty()`
  2. 获取元素数量
-   `wordCount.size(); `
- 3. 清空所有元素
-   `wordCount.clear();`
+   `myHashMap.size(); `
 
 
 ## 哈希表的底层原理
@@ -112,4 +109,5 @@ C++ 中的关联容器（如 std::map 或 std::unordered_map）存储的元素�
  1. 需要快速查找、插入和删除。
  2. 不关心元素顺序。
  3. 数据量较大且内存充足。
+
 
