@@ -26,8 +26,9 @@ while 判断条件(condition)：
 ```
  - 执行语句可以是单个语句或语句块。判断条件可以是任何表达式，任何非零、或非空（null）的值均为true。
  - 当判断条件假 false 时，循环结束。
- 
+
  ```mermaid
  graph TD
     A[condition] -->|true| B[代码块 statement(s)]
     A -->|false| C[结束]
+```
