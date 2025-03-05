@@ -110,4 +110,171 @@ for(const auto& pair: myHashMap) {  // 遍历哈希表
  2. 不关心元素顺序。
  3. 数据量较大且内存充足。
 
+ # 哈希函数
+
+ ## 哈希函数的作用
+
+ 哈希函数的主要目的是：
+ - 快速定位：通过哈希值快速确定数据在哈希表中的存储位置。
+ - 均匀分布：将数据均匀分布在哈希表中，减少冲突（Collision）。
+ - 一致性：相同的输入总是产生相同的哈希值。
+
+ ## 哈希函数的工作原理
+
+ - 哈希函数将输入（Key）转换为一个整数（哈希值），然后通过取模运算或其他方法将哈希值映射到哈希表的索引范围。
+
+```cpp
+ // 假设有一个哈希表大小为 10，哈希函数为：
+ int hashFunction(const std::string& key) {
+    int hash = 0;
+    for (char ch : key) {
+        hash += ch;  // 简单地将字符的 ASCII 值相加
+    }
+    return hash % 10;  // 取模运算，确保索引在 0 到 9 之间
+}
+```
+
+ - 为什么需要取模运算？
+    哈希函数生成的哈希值通常是一个很大的整数（例如 32 位或 64 位整数）。而哈希表的大小是有限的（例如 10 个桶或 1000 个桶）。为了将哈希值映射到哈希表的索引范围内，我们需要对哈希值进行取模运算。
+
+ - 取模运算的作用
+    1. 将哈希值限制在哈希表的大小范围内。
+
+    2. 确保索引值在 0 到 tableSize - 1 之间。
+
+ - 示例
+ 假设哈希表的大小为 10，哈希函数生成的哈希值为 478，则：
+ ```cpp
+ int index = 478 % 10;  // index = 8
+ ```
+
+## 哈希函数的特性
+
+一个好的哈希函数应满足以下特性：
+ - 确定性：相同的输入总是产生相同的哈希值。
+ - 高效性：计算速度快。
+ - 均匀性：哈希值应均匀分布，减少冲突。
+ - 抗碰撞性：不同的输入应尽量产生不同的哈希值。
+
+## 常见的哈希函数
+
+1. 简单哈希函数
+ - 适用于整数键：
+```cpp
+int hashFunction(int key) {
+    return key % tableSize;  // 直接取模
+}
+```
+ - 适用于字符串键：
+```cpp
+ int hashFunction(const std::string& key) {
+    int hash = 0;
+    for (char ch : key) {
+        hash += ch;  // 简单地将字符的 ASCII 值相加
+    }
+    return hash % tableSize;
+}
+```
+2. 更好的字符串哈希函数
+ - djb2 哈希函数：
+```cpp
+ unsigned long hashFunction(const std::string& key) {
+    unsigned long hash = 5381;
+    for (char ch : key) {
+        hash = ((hash << 5) + hash) + ch;  // hash * 33 + ch
+    }
+    return hash % tableSize;
+}
+```
+ - FNV-1 哈希函数：
+```cpp
+ unsigned long hashFunction(const std::string& key) {
+    unsigned long hash = 2166136261u;  // FNV 偏移基础值
+    for (char ch : key) {
+        hash ^= ch;  // 异或操作
+        hash *= 16777619;  // FNV 质数
+    }
+    return hash % tableSize;
+}
+```
+## 哈希冲突
+
+ - 哈希冲突是指不同的输入产生了相同的哈希值。解决冲突的常见方法有：
+    1. 开链法（Separate Chaining）：每个桶存储一个链表，冲突的元素追加到链表中。
+    2. 开放地址法（Open Addressing）：冲突时，通过探测方法（如线性探测、二次探测）寻找下一个空闲位置。
+ - 什么情况下会出现哈希冲突
+    1. 哈希函数设计不佳：如果哈希函数不能均匀分布数据，冲突的概率会增加。
+    2. 数据分布不均匀：如果输入数据集中在某些特定模式，冲突的概率会增加。
+    3. 哈希表容量不足：如果哈希表的大小远小于数据量，冲突的概率会增加。
+ - 如何减少哈希冲突
+    1. 设计更好的哈希函数：如使用 djb2、FNV-1 等哈希函数。
+    2. 增加哈希表大小：更大的哈希表可以减少冲突的概率。
+    3. 使用冲突解决策略：如开链法（Separate Chaining）或开放地址法（Open Addressing）。
+
+## 示例代码：实现一个简单的哈希表
+
+```cpp
+#include <iostream>
+#include <list>
+#include <string>
+
+class HashTable {
+private:
+    static const int tableSize = 10;  // 哈希表大小
+    std::list<std::pair<std::string, int>> table[tableSize];  // 开链法
+
+    // 哈希函数
+    int hashFunction(const std::string& key) {
+        int hash = 0;
+        for (char ch : key) {
+            hash += ch;
+        }
+        return hash % tableSize;
+    }
+
+public:
+    // 插入键值对
+    void insert(const std::string& key, int value) {
+        int index = hashFunction(key);
+        table[index].push_back({key, value});
+    }
+
+    // 查找值
+    int find(const std::string& key) {
+        int index = hashFunction(key);
+        for (const auto& pair : table[index]) {
+            if (pair.first == key) {
+                return pair.second;
+            }
+        }
+        return -1;  // 未找到
+    }
+
+    // 删除键值对
+    void remove(const std::string& key) {
+        int index = hashFunction(key);
+        table[index].remove_if([&key](const std::pair<std::string, int>& pair) {
+            return pair.first == key;
+        });
+    }
+};
+
+int main() {
+    HashTable scores;
+    scores.insert("Alice", 90);
+    scores.insert("Bob", 85);
+    scores.insert("Charlie", 95);
+
+    std::cout << "Alice 的分数: " << scores.find("Alice") << std::endl;  // 输出 90
+    std::cout << "Bob 的分数: " << scores.find("Bob") << std::endl;      // 输出 85
+
+    scores.remove("Bob");
+    std::cout << "Bob 的分数: " << scores.find("Bob") << std::endl;      // 输出 -1（未找到）
+
+    return 0;
+}
+```
+
+*** 学不明白！！！ ***
+
 
