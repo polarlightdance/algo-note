@@ -29,6 +29,6 @@ while 判断条件(condition)：
 
  ```mermaid
  graph TD
-    A[condition] -->|true| B[代码块 statement(s)]
-    A -->|false| C[结束]
+    A[condition] -->|true| B[Execute statements]
+    A -->|false| C[End]
 ```
