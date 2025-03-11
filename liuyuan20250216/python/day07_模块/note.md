@@ -90,16 +90,107 @@ if __name__ == "__main__":
 模块搜索路径存储在 system 模块的 sys.path 变量中。变量里包含当前目录，PYTHONPATH和由安装过程决定的默认目录。
 
 # PYTHONPATH 变量
-作为环境变量，PYTHONPATH 由装在一个列表里的许多目录组成。PYTHONPATH 的语法和 shell 变量 PATH 的一样。
+PYTHONPATH 是一个环境变量，用于指定 Python 在导入模块时的搜索路径。当你在 Python 中导入一个模块时，Python 会按照一定的顺序查找模块文件，而 PYTHONPATH 就是其中一部分。
+ - PYTHONPATH 的作用
+    PYTHONPATH 的作用是告诉 Python 解释器在哪些目录中查找模块。默认情况下，Python 会查找以下位置：
+    1. 当前目录：运行 Python 脚本的目录。
+    2. PYTHONPATH 指定的目录：通过环境变量 PYTHONPATH 设置的目录。
+    3. 标准库目录：Python 安装路径中的标准库目录（如 /usr/lib/python3.x）。
 
-在 Windows 系统，典型的 PYTHONPATH 如下：
+    通过设置 PYTHONPATH，你可以将自定义的目录添加到模块搜索路径中，从而让 Python 能够找到你定义的模块或包。
+
+ - PYTHONPATH 的格式
+ PYTHONPATH 是一个由多个目录路径组成的列表，路径之间用冒号（:）分隔（在 Windows 系统中用分号 ; 分隔）。
 ```py
-set PYTHONPATH=c:\python27\lib;
+ export PYTHONPATH=/path/to/dir1:/path/to/dir2
 ```
-在 UNIX 系统，典型的 PYTHONPATH 如下：
+ - 如何查看当前的模块搜索路径
+ 在 Python 中，可以通过 sys.path 查看当前的模块搜索路径。sys.path 是一个列表，包含了 Python 解释器查找模块的所有目录。
+ ```py
+import sys
+print(sys.path)
+# 输出：
+[
+    '',  # 当前目录
+    '/path/to/dir1',  # PYTHONPATH 中的目录
+    '/path/to/dir2',
+    '/usr/lib/python3.8',  # 标准库目录
+    ...
+]
+ ```
+-  如何设置 PYTHONPATH
+ 方法 1：临时设置（仅在当前终端会话中有效）
+
+ 在终端中使用 export 命令（Linux/macOS）或 set 命令（Windows）设置 PYTHONPATH。
+
+ Linux/macOS：
 ```py
-set PYTHONPATH=/usr/local/lib/python
+export PYTHONPATH=/path/to/dir1:/path/to/dir2
 ```
+ Windows：
+```py
+set PYTHONPATH=C:\path\to\dir1;C:\path\to\dir2
+```
+ 方法 2：永久设置（对所有终端会话有效）
+
+ 将 PYTHONPATH 添加到系统的环境变量中。
+
+ Linux/macOS：
+ 将以下内容添加到 ~/.bashrc 或 ~/.zshrc 文件中：
+```py
+export PYTHONPATH=/path/to/dir1:/path/to/dir2
+```
+ Windows：
+
+ 右键点击“此电脑” -> “属性” -> “高级系统设置” -> “环境变量”。
+
+ 在“系统变量”或“用户变量”中，新建一个变量名为 PYTHONPATH，值为你的目录路径（多个路径用分号 ; 分隔）。
+
+ - PYTHONPATH 的使用场景
+ 场景 1：导入自定义模块 
+
+ 假设你有一个自定义模块 /home/user/my_modules/mymodule.py，你可以通过设置 PYTHONPATH 让 Python 找到它。
+
+ 设置 PYTHONPATH：
+```py
+export PYTHONPATH=/home/user/my_modules
+```
+ 导入模块：
+```py
+import mymodule
+mymodule.my_function()
+```
+ 场景 2：导入项目中的子模块
+
+ 假设你的项目结构如下：
+```py
+ project/
+├── main.py
+└── mypackage/
+    ├── __init__.py
+    └── mymodule.py
+```
+ 如果 main.py 需要导入 mypackage.mymodule，但 project 目录不在 PYTHONPATH 中，你可以设置 PYTHONPATH 为 project 的父目录。
+
+ 设置 PYTHONPATH：
+```py
+export PYTHONPATH=/path/to/project
+```
+ 导入模块：
+```py
+from mypackage import mymodule
+mymodule.my_function()
+```
+ - PYTHONPATH 的注意事项
+ 1. 优先级
+    - PYTHONPATH 中的目录会优先于标准库目录被搜索。
+    - 如果 PYTHONPATH 中的目录与标准库目录有同名模块，PYTHONPATH 中的模块会被优先加载。
+
+ 2. 避免冲突
+    - 如果 PYTHONPATH 中包含多个目录，且这些目录中有同名模块，可能会导致意外的行为。
+
+ 3. 动态修改 sys.path
+    - 虽然可以通过 sys.path.append() 动态添加路径，但这种方式只对当前脚本有效，不会影响其他脚本。
 
 # 命名空间和作用域
 变量是拥有匹配对象的名字（标识符）。命名空间是一个包含了变量名称们（键）和它们各自相应的对象们（值）的字典。
