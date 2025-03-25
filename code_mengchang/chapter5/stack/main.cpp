@@ -4,7 +4,7 @@
 
 int main()
 {
-    std::shared_ptr<HelloAlgo::Stack> stack = std::dynamic_pointer_cast(std::make_shared<HelloAlgo::LinkListStackInner>());
+    std::shared_ptr<HelloAlgo::LinkListStack> stack = std::make_shared<HelloAlgo::LinkListStack>();
     stack->push(1);
 
     stack->print();
