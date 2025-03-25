@@ -4,9 +4,7 @@ project(demo)
 
 set(project_path ${CMAKE_CURRENT_SOURCE_DIR})
 
-include_directories(${project_path}/include
-    ${project_path}/include_inner
-)
+include_directories(${project_path}/include)
 
 # gen static library
 add_subdirectory(src)

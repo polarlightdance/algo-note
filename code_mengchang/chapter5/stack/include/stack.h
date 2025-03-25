@@ -1,24 +1,37 @@
-#ifndef __STACK_H__
-#define __STACK_H__
+#ifndef __STACK_INNER__H__
+#define __STACK_INNER__H__
+
+#include <memory>
 
 namespace HelloAlgo {
-class LinkListStackInner;
-
-class Stack {
+class ListNode {
 public:
-    Stack() = default;
-    virtual ~Stack() = default;
+    ListNode() = default;
+    ListNode(int value, ListNode* next): m_value(value), m_next(next) {}
 
-    virtual void push(int value) = 0;
-    virtual int pop() = 0;
-    virtual int peek() = 0;
-
-    virtual int size() = 0;
-    virtual bool isEmpty() = 0;
-    virtual void print() = 0;
-    virtual void clear() = 0;
-};
+    int m_value;
+    ListNode *m_next;
 };
 
+class LinkListStack {
+private:
+    std::shared_ptr<ListNode> m_stackTop;
+    int m_stackSize;
+
+public:
+    LinkListStack();
+    ~LinkListStack();
+
+    void push(int value);
+    int pop();
+    int peek();
+    bool isEmpty();
+    int size();
+    void clear();
+    void print();
+};
+
+};
 
 #endif
+
