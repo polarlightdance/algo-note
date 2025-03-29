@@ -1,10 +1,10 @@
-#include "statck_inner.h"
+#include "stack.h"
 
 #include <iostream>
 
 namespace HelloAlgo {
 
-LinkListStackInner::LinkListStackInner()
+LinkListStack::LinkListStack()
 {
     m_stackTop = std::make_shared<ListNode>();
     m_stackTop->m_value = 0;
@@ -13,13 +13,13 @@ LinkListStackInner::LinkListStackInner()
     m_stackSize = 0;
 }
 
-void LinkListStackInner::push(int value)
+void LinkListStack::push(int value)
 {
     m_stackTop->m_next = new ListNode(value, m_stackTop->m_next);
     m_stackSize++;
 }
 
-int LinkListStackInner::pop()
+int LinkListStack::pop()
 {
     if (isEmpty()) {
         return -1;
@@ -34,7 +34,7 @@ int LinkListStackInner::pop()
     return value;
 }
 
-int LinkListStackInner::peek()
+int LinkListStack::peek()
 {
     if (isEmpty()) {
         return -1;
@@ -43,17 +43,17 @@ int LinkListStackInner::peek()
     return m_stackTop->m_next->m_value;
 }
 
-int LinkListStackInner::size()
+int LinkListStack::size()
 {
     return m_stackSize;
 }
 
-bool LinkListStackInner::isEmpty()
+bool LinkListStack::isEmpty()
 {
     return m_stackSize == 0;
 }
 
-void LinkListStackInner::print()
+void LinkListStack::print()
 {
     for (auto temp = m_stackTop->m_next; temp != nullptr; temp = temp->m_next) {
         std::cout << temp->m_value << " ";
@@ -61,7 +61,7 @@ void LinkListStackInner::print()
     std::cout << std::endl;
 }
 
-void LinkListStackInner::clear()
+void LinkListStack::clear()
 {
     while (m_stackTop->m_next != nullptr) {
         auto temp = m_stackTop->m_next;
@@ -72,7 +72,7 @@ void LinkListStackInner::clear()
     m_stackSize = 0;
 }
 
-LinkListStackInner::~LinkListStackInner()
+LinkListStack::~LinkListStack()
 {
     clear();
 }
